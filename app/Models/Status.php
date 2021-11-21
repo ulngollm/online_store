@@ -9,4 +9,11 @@ class Status extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $hidden = [
+        'description'
+    ];
+
+    public function orders(){
+        return $this->hasMany(OrderItem::class);
+    }
 }

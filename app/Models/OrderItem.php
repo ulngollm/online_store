@@ -10,4 +10,8 @@ class OrderItem extends Model
     use HasFactory;
     public $timestamps = false;
 
+    public function product(){
+        return $this->hasOne(Product::class);
+    }
+
 }
